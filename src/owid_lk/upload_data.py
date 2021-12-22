@@ -17,7 +17,7 @@ def write_readme():
     filex.write(readme_file, content)
 
 
-if __name__ == '__main__':
+def run_prod():
     init()
 
     for d in CONFIG:
@@ -25,3 +25,14 @@ if __name__ == '__main__':
         owid_scraper.scrape(url)
         tweeter.tweet(d)
         write_readme()
+
+
+def run_test_tweet():
+    init()
+
+    for d in CONFIG:
+        tweeter.tweet(d)
+
+
+if __name__ == '__main__':
+    run_prod()
