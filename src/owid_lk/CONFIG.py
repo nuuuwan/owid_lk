@@ -93,7 +93,7 @@ def _covid19_deaths(data_list):
         )
     )
 
-    return f'''Boosters per 100 people ({lk_day})
+    return f'''Daily New Deaths per 1M people - 7day avg. ({lk_day})
 
 {entity_info_list}'''
 
