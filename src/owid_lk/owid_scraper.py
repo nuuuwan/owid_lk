@@ -1,13 +1,21 @@
 import time
-
+import os
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
 
-from owid_lk._utils import get_data_dir, log
+from owid_lk._utils import (
+    get_data_dir,
+    log,
+    get_image_file,
+    get_url,
+    get_data_file,
+)
 
-TIME_LOAD = 0.5
-TIME_WAIT_DEFAULT = 0.5
+TIME_LOAD = 2
+TIME_WAIT_DEFAULT = 2
 TIME_WAIT_DOWNLOAD = 2
+TIME_COMPLETE_DOWNLOAD = 10
+TIME_COMPLETE_DOWNLOAD_LONG = 60
 SCREEN_WIDTH, SCREEN_HEIGHT = 3200, 1800
 
 
@@ -28,11 +36,13 @@ def get_firefox_profile():
 
 def get_firefox_options():
     options = Options()
-    options.headless = True
+    options.headless = False
     return options
 
 
-def scrape(url):
+def scrape(d):
+    url = get_url(d)
+
     log.info(f'Scraping {url}...')
 
     driver = webdriver.Firefox(
@@ -50,19 +60,37 @@ def scrape(url):
     a_download.click()
     time.sleep(TIME_WAIT_DOWNLOAD)
 
+    # Downloadin image...
+
     button_download_png = driver.find_element_by_xpath(
         '//button[@data-track-note="chart-download-png"]'
     )
     button_download_png.click()
-    time.sleep(TIME_WAIT_DOWNLOAD)
+    log.info('Downloading image...')
+    time.sleep(TIME_COMPLETE_DOWNLOAD)
 
-    button_download_png = driver.find_element_by_xpath(
-        '//button[@data-track-note="chart-download-csv"]'
-    )
-    button_download_png.click()
-    time.sleep(TIME_WAIT_DOWNLOAD)
+    down_image_file = d.get('down_image_file', None)
+    data_dir = get_data_dir()
+    if down_image_file:
+        image_file = get_image_file(d)
+        os.system(f'mv "{data_dir}/{down_image_file}" "{image_file}"')
+
+    # Downloadin data...
+
+    func_get_tweet_text = d.get('func_get_tweet_text', None)
+    if func_get_tweet_text:
+        button_download_csv = driver.find_element_by_xpath(
+            '//button[@data-track-note="chart-download-csv"]'
+        )
+        button_download_csv.click()
+        log.info('Downloading data...')
+        time.sleep(TIME_COMPLETE_DOWNLOAD_LONG)
+
+        down_data_file = d.get('down_data_file', None)
+        if down_data_file:
+            data_file = get_data_file(d)
+            os.system(f'mv "{data_dir}/{down_data_file}" "{data_file}"')
 
     driver.quit()
 
-    data_dir = get_data_dir()
-    log.info(f'Saved data to {data_dir}')
+    log.info(f'Done. Saved data to {data_dir}')

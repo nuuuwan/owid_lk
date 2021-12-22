@@ -28,3 +28,4 @@
   *  [2021-12-22 09:49AM] Bugs
   *  [2021-12-22 09:58AM] Added README
   *  [2021-12-22 10:22AM] Added inner tweet
+  *  [2021-12-22 11:19AM] Added COVID19 deaths

@@ -1,18 +1,20 @@
-import os
-
 from utils import tsv, twitter
 
-from owid_lk._utils import get_data_dir, get_url
+from owid_lk._utils import get_data_dir, get_url, get_image_file, get_data_file
 
 DELIMITER = ','
 
 
 def tweet(d):
-    data_dir = get_data_dir()
-    png_file = os.path.join(data_dir, d['name'] + '.png')
-    csv_file = os.path.join(data_dir, d['name'] + '.csv')
-    data_list = tsv.read(csv_file, delimiter=DELIMITER)
-    inner_tweet_text = d['func_get_tweet_text'](data_list)
+    get_data_dir()
+    png_file = get_image_file(d)
+
+    func_get_tweet_text = d.get('func_get_tweet_text', None)
+    inner_tweet_text = ''
+    if func_get_tweet_text:
+        data_file = get_data_file(d)
+        data_list = tsv.read(data_file, delimiter=DELIMITER)
+        inner_tweet_text = func_get_tweet_text(data_list)
 
     name_str = d['name'].replace('-', ' ').title()
     url = get_url(d)
