@@ -13,3 +13,5 @@
   *  [2021-12-22 08:40AM] Fixed workflows
   *  [2021-12-22 08:43AM] Fixed workflows
   *  [2021-12-22 08:48AM] Fixed various bugs
+* [2021-12-22 08:48AM] data
+  *  [2021-12-22 08:48AM] Updated README
