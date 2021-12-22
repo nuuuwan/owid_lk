@@ -22,6 +22,7 @@ def init():
     os.system(f'rm -rf {data_dir}')
     os.system(f'mkdir {data_dir}')
 
+
 def get_url(d):
     return os.path.join(
         URL_BASE, d['name'] + '?' + urllib.parse.urlencode(d['url_params'])

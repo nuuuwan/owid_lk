@@ -1,5 +1,7 @@
 import os
-from utils import timex, twitter
+
+from utils import twitter
+
 from owid_lk._utils import get_data_dir, get_url
 
 
