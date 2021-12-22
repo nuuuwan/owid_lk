@@ -8,7 +8,7 @@ from owid_lk.CONFIG import CONFIG
 
 
 if __name__ == '__main__':
-    # init()
+    init()
 
     for d in CONFIG:
         url = get_url(d)
