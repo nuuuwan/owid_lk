@@ -24,3 +24,4 @@
   *  [2021-12-22 09:31AM] Added tweeter shell
   *  [2021-12-22 09:40AM] Basic Tweet done
   *  [2021-12-22 09:41AM] enabled scraper
+  *  [2021-12-22 09:45AM] Fixed 3.10.0 tweepy issue
