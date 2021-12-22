@@ -36,7 +36,7 @@ def get_firefox_profile():
 
 def get_firefox_options():
     options = Options()
-    options.headless = False
+    options.headless = True
     return options
 
 
