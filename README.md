@@ -12,3 +12,4 @@
   *  [2021-12-22 08:38AM] Basic Scraper Complete
   *  [2021-12-22 08:40AM] Fixed workflows
   *  [2021-12-22 08:43AM] Fixed workflows
+  *  [2021-12-22 08:48AM] Fixed various bugs

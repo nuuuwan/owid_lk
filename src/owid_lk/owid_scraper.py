@@ -1,6 +1,6 @@
+import os
 import time
 
-import os
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
 from utils import timex
@@ -20,8 +20,8 @@ def get_data_dir():
 
 def init():
     data_dir = get_data_dir()
-    if not os.path.exists(data_dir):
-        os.mkdir(data_dir)
+    os.system(f'rm -rf {data_dir}')
+    os.system(f'mkdir {data_dir}')
 
 
 def get_firefox_profile():
