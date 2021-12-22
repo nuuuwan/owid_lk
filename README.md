@@ -10,3 +10,4 @@
   *  [2021-12-22 07:25AM] Added owid_scraper shell
   *  [2021-12-22 07:26AM] Added owid_scraper shell
   *  [2021-12-22 08:38AM] Basic Scraper Complete
+  *  [2021-12-22 08:40AM] Fixed workflows
