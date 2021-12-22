@@ -7,3 +7,4 @@
   * Lint
   *  [2021-12-22 07:21AM] Initial files
   *  [2021-12-22 07:22AM] Removed files
+  *  [2021-12-22 07:25AM] Added owid_scraper shell
