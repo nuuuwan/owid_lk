@@ -21,3 +21,4 @@
   *  [2021-12-22 09:07AM] More bugs
   *  [2021-12-22 09:09AM] More bugs
   *  [2021-12-22 09:26AM] Added config
+  *  [2021-12-22 09:31AM] Added tweeter shell

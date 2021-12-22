@@ -1,27 +1,14 @@
-import os
 import time
 
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
-from utils import timex
 
-from owid_lk._utils import log
+from owid_lk._utils import get_data_dir, log
 
 TIME_LOAD = 0.5
 TIME_WAIT_DEFAULT = 0.5
 TIME_WAIT_DOWNLOAD = 2
 SCREEN_WIDTH, SCREEN_HEIGHT = 3200, 1800
-
-
-def get_data_dir():
-    date_id = timex.get_date_id()
-    return f'/tmp/owid_lk.{date_id}'
-
-
-def init():
-    data_dir = get_data_dir()
-    os.system(f'rm -rf {data_dir}')
-    os.system(f'mkdir {data_dir}')
 
 
 def get_firefox_profile():
@@ -46,7 +33,6 @@ def get_firefox_options():
 
 
 def scrape(url):
-
     log.info(f'Scraping {url}...')
 
     driver = webdriver.Firefox(
