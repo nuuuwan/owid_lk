@@ -23,3 +23,4 @@
   *  [2021-12-22 09:26AM] Added config
   *  [2021-12-22 09:31AM] Added tweeter shell
   *  [2021-12-22 09:40AM] Basic Tweet done
+  *  [2021-12-22 09:41AM] enabled scraper

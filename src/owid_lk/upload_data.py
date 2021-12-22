@@ -12,5 +12,5 @@ if __name__ == '__main__':
 
     for d in CONFIG:
         url = get_url(d)
-        # owid_scraper.scrape(url)
+        owid_scraper.scrape(url)
         tweeter.tweet(d)
