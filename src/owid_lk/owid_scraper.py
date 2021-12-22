@@ -1,4 +1,7 @@
+from owid_lk._utils import log
+
 def scrape(url):
+    log.info(f'Scraping {url}...')
     pass
 
 
