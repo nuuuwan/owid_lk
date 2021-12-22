@@ -16,14 +16,9 @@ jobs:
       with:
         python-version: '3.7'
 
-    - uses: actions/cache@v2
-      with:
-        path: ~/.cache/pip
-        key: ${{ hashFiles('setup.py') }}-${{ hashFiles('dev-requirements.txt') }}
-
     - name: Install requirements
       run: |
-        pip install --upgrade --upgrade-strategy eager -r dev-requirements.txt -e .
+        pip install --upgrade --upgrade-strategy eager -r requirements.txt -e .
 
     - name: Run - Upload Data
       run: |
