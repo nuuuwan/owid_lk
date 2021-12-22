@@ -20,3 +20,4 @@
   *  [2021-12-22 09:06AM] added install reqs
   *  [2021-12-22 09:07AM] More bugs
   *  [2021-12-22 09:09AM] More bugs
+  *  [2021-12-22 09:26AM] Added config
