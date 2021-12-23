@@ -31,7 +31,7 @@ def run_prod():
     init()
 
     info_list = []
-    for d in CONFIG[1:]:
+    for d in CONFIG[-1:]:
         owid_scraper.scrape(d)
         tweeter.tweet(d)
         info_list.append(dict(name=d['name']))
@@ -39,7 +39,7 @@ def run_prod():
 
 
 def run_test_tweet():
-    for d in CONFIG:
+    for d in CONFIG[-1:]:
         tweeter.tweet(d)
 
 
@@ -51,3 +51,5 @@ def run_test_open_urls():
 
 if __name__ == '__main__':
     run_test_open_urls()
+    # run_prod()
+    # run_test_tweet()

@@ -27,6 +27,8 @@ Source: {url}
     '''
     status_image_files = [png_file]
 
+    tweet_text = tweet_text.replace("\n" * 4, "\n" * 2)
+
     twtr = twitter.Twitter.from_args()
     twtr.tweet(
         tweet_text=tweet_text,

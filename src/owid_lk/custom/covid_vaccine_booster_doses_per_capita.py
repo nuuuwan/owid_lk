@@ -1,4 +1,5 @@
-from owid_lk._constants import LK_CONTS_WORLD, LK_NAME
+from owid_lk._constants import LK_CONTS_WORLD_NAMES, LK_NAME
+
 
 def covid_vaccine_booster_doses_per_capita(data_list):
     lk_data_list = list(
@@ -11,7 +12,7 @@ def covid_vaccine_booster_doses_per_capita(data_list):
     lk_day = latest_lk_data['Day']
 
     entity_to_value = {}
-    for entity in LK_CONTS_WORLD:
+    for entity in LK_CONTS_WORLD_NAMES:
         entity_data_list = list(
             filter(
                 lambda d: d['Entity'] == entity and d['Day'] == lk_day,

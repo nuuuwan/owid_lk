@@ -12,8 +12,9 @@ URL_EXPLORERS = os.path.join(URL_OWID, 'explorers')
 def join_tilde(*_list):
     return '~'.join(_list)
 
+
 LK_NAME = 'Sri Lanka'
-LK_CONTS_WORLD = join_tilde(
+LK_CONTS_WORLD_URL = join_tilde(
     'Africa',
     'Asia',
     'European Union',
@@ -23,3 +24,14 @@ LK_CONTS_WORLD = join_tilde(
     'OWID_WRL',
     'South America',
 )
+
+LK_CONTS_WORLD_NAMES = [
+    'Africa',
+    'Asia',
+    'European Union',
+    'North America',
+    'Oceania',
+    'South America',
+    'Sri Lanka',
+    'World',
+]
