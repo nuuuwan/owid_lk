@@ -37,3 +37,4 @@
   *  [2021-12-23 08:54AM] Fixed bug in tests tweet
   *  [2021-12-23 09:03AM] Fixed omicron bug
   *  [2021-12-23 09:13AM] Added hashtags
+  *  [2021-12-23 09:14AM] Added hashtags
