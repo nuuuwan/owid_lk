@@ -21,11 +21,11 @@ def tweet(d):
     name_str = name_str.replace('Covid19 ', '#COVID19 ')
     url = get_url(d)
     tweet_text = f'''{name_str}
-via @OurWorldInData
+via
 
 {inner_tweet_text}
 
-#COVID19SL #SriLanka #lka
+#COVID19SL #lka
 Source: {url}
     '''
     status_image_files = [png_file]

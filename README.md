@@ -38,3 +38,4 @@
   *  [2021-12-23 09:03AM] Fixed omicron bug
   *  [2021-12-23 09:13AM] Added hashtags
   *  [2021-12-23 09:14AM] Added hashtags
+  *  [2021-12-23 09:24AM] Shortened tweets
