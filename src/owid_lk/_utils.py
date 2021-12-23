@@ -32,9 +32,13 @@ def init():
 
 
 def get_url(d):
-    url = d.get('url', None)
-    if url:
-        return url
-    return os.path.join(
-        URL_BASE, d['name'] + '?' + urllib.parse.urlencode(d['url_params'])
+    url_base = d['url_base']
+    url_params = d['url_params']
+    url_data = d.get('url_data')
+    if not url_data:
+        url_data = d['name']
+
+    url = os.path.join(
+        url_base, url_data + '?' + urllib.parse.urlencode(url_params)
     )
+    return url

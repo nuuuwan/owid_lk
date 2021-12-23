@@ -1,15 +1,11 @@
-import time
 import os
+import time
+
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
 
-from owid_lk._utils import (
-    get_data_dir,
-    log,
-    get_image_file,
-    get_url,
-    get_data_file,
-)
+from owid_lk._utils import (get_data_dir, get_data_file, get_image_file,
+                            get_url, log)
 
 TIME_LOAD = 2
 TIME_WAIT_DEFAULT = 2

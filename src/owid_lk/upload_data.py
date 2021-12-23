@@ -1,7 +1,9 @@
+import os
+
 from utils import filex, timex
 
 from owid_lk import owid_scraper, tweeter
-from owid_lk._utils import init
+from owid_lk._utils import get_url, init
 from owid_lk.CONFIG import CONFIG
 
 
@@ -29,7 +31,7 @@ def run_prod():
     init()
 
     info_list = []
-    for d in CONFIG:
+    for d in CONFIG[1:]:
         owid_scraper.scrape(d)
         tweeter.tweet(d)
         info_list.append(dict(name=d['name']))
@@ -37,11 +39,15 @@ def run_prod():
 
 
 def run_test_tweet():
-    init()
-
     for d in CONFIG:
         tweeter.tweet(d)
 
 
+def run_test_open_urls():
+    for d in CONFIG:
+        url = get_url(d)
+        os.system(f'open -a firefox "{url}"')
+
+
 if __name__ == '__main__':
-    run_prod()
+    run_test_open_urls()

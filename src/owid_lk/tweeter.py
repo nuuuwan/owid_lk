@@ -1,6 +1,6 @@
 from utils import tsv, twitter
 
-from owid_lk._utils import get_data_dir, get_url, get_image_file, get_data_file
+from owid_lk._utils import get_data_dir, get_data_file, get_image_file, get_url
 
 DELIMITER = ','
 
