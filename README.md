@@ -31,3 +31,4 @@
   *  [2021-12-22 11:19AM] Added COVID19 deaths
   *  [2021-12-22 11:25AM] options.headless = True
   *  [2021-12-22 11:33AM] Fixed text
+  *  [2021-12-23 06:49AM] Added upload-data-cron
