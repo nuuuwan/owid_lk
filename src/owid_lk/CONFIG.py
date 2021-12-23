@@ -80,7 +80,7 @@ CONFIG = [
         name='covid19-omicron-variant',
         url_params=dict(
             time=WINDOW_26WEEKS,
-            Metric='Omicron variant',
+            Metric='Omicron variant (share)',
             Interval='7-day+rolling+average',
             country=LK_CONTS_WORLD_URL,
         ),

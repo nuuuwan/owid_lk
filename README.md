@@ -35,3 +35,4 @@
   *  [2021-12-23 07:39AM] Added custom folder; refactored
   *  [2021-12-23 08:42AM] Added more charts
   *  [2021-12-23 08:54AM] Fixed bug in tests tweet
+  *  [2021-12-23 09:03AM] Fixed omicron bug
