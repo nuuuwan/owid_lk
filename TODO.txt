@@ -1,5 +1,0 @@
-
-
-
-
-https://ourworldindata.org/explorers/coronavirus-data-explorer?time=2021-09-27..latest&facet=none&uniformYAxis=0&pickerMetric=new_deaths_per_million&Metric=Tests&Interval=7-day+rolling+average&Relative+to+Population=true&Align+outbreaks=false&country=European+Union~LKA~North+America~Oceania~OWID_WRL~South+America

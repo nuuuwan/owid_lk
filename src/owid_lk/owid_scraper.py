@@ -75,17 +75,20 @@ def scrape(d):
 
     func_get_tweet_text = d.get('func_get_tweet_text', None)
     if func_get_tweet_text:
-        button_download_csv = driver.find_element_by_xpath(
-            '//button[@data-track-note="chart-download-csv"]'
-        )
-        button_download_csv.click()
-        log.info('Downloading data...')
-        time.sleep(TIME_COMPLETE_DOWNLOAD_LONG)
-
         down_data_file = d.get('down_data_file', None)
-        if down_data_file:
-            data_file = get_data_file(d)
-            os.system(f'mv "{data_dir}/{down_data_file}" "{data_file}"')
+        data_file = get_data_file(d)
+
+        if not down_data_file or not os.path.exists(data_file):
+            button_download_csv = driver.find_element_by_xpath(
+                '//button[@data-track-note="chart-download-csv"]'
+            )
+            button_download_csv.click()
+            log.info('Downloading data...')
+            time.sleep(TIME_COMPLETE_DOWNLOAD_LONG)
+
+            if down_data_file:
+                data_file = get_data_file(d)
+                os.system(f'mv "{data_dir}/{down_data_file}" "{data_file}"')
 
     driver.quit()
 

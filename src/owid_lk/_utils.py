@@ -27,6 +27,7 @@ def get_data_file(d):
 
 def init():
     data_dir = get_data_dir()
+    log.info(f'Cleaning {data_dir}...')
     os.system(f'rm -rf {data_dir}')
     os.system(f'mkdir {data_dir}')
 

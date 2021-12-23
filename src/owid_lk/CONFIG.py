@@ -94,9 +94,5 @@ CONFIG = [
             Interval='7-day+rolling+average',
             country=LK_CONTS_WORLD_URL,
         ),
-        func_get_tweet_text=_coronavirus_data_explorer_factory(
-            'new_tests_smoothed_per_thousand',
-            'Daily New Tests per 1K people - 7day avg.',
-        ),
     ),
 ]
