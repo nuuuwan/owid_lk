@@ -50,5 +50,5 @@ def run_test_open_urls():
 
 if __name__ == '__main__':
     # run_test_open_urls()
-    run_test_tweet()
-    # run_prod()
+    # run_test_tweet()
+    run_prod()
