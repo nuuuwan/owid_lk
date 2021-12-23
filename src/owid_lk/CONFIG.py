@@ -52,7 +52,7 @@ CONFIG = [
         ),
         func_get_tweet_text=_coronavirus_data_explorer_factory(
             'new_deaths_smoothed_per_million',
-            'Daily New Deaths per 1M people - 7day avg.',
+            'Daily New #COVID19 Deaths per 1M people - 7day avg.',
         ),
     ),
     COVID_EXPLORER_DEFAULTS

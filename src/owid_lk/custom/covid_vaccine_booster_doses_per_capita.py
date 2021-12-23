@@ -37,6 +37,6 @@ def covid_vaccine_booster_doses_per_capita(data_list):
         )
     )
 
-    return f'''Boosters per 100 people ({lk_day})
+    return f'''#COVID19 Boosters per 100 people ({lk_day})
 
 {entity_info_list}'''

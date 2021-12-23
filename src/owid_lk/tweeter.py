@@ -11,26 +11,28 @@ def tweet(d):
 
     func_get_tweet_text = d.get('func_get_tweet_text', None)
     inner_tweet_text = ''
+    name_str = ''
     if func_get_tweet_text:
         data_file = get_data_file(d)
         data_list = tsv.read(data_file, delimiter=DELIMITER)
         inner_tweet_text = func_get_tweet_text(data_list)
+    else:
+        name_str = d['name'].replace('-', ' ').title()
+        name_str = name_str.replace('Covid ', '#COVID19 ')
+        name_str = name_str.replace('Covid19 ', '#COVID19 ')
 
-    name_str = d['name'].replace('-', ' ').title()
-    name_str = name_str.replace('Covid ', '#COVID19 ')
-    name_str = name_str.replace('Covid19 ', '#COVID19 ')
     url = get_url(d)
     tweet_text = f'''{name_str}
-via
 
 {inner_tweet_text}
 
-#COVID19SL #lka
-Source: {url}
+#COVID19SL #SriLanka #lka
+Source: @OurWorldInData - {url}
     '''
     status_image_files = [png_file]
 
     tweet_text = tweet_text.replace("\n" * 4, "\n" * 2)
+    tweet_text = tweet_text.strip()
 
     twtr = twitter.Twitter.from_args()
     twtr.tweet(
