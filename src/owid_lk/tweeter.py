@@ -17,12 +17,15 @@ def tweet(d):
         inner_tweet_text = func_get_tweet_text(data_list)
 
     name_str = d['name'].replace('-', ' ').title()
+    name_str = name_str.replace('Covid ', '#COVID19')
+    name_str = name_str.replace('Covid19 ', '#COVID19')
     url = get_url(d)
     tweet_text = f'''{name_str}
 via @OurWorldInData
 
 {inner_tweet_text}
 
+#COVID19SL #SriLanka #lka
 Source: {url}
     '''
     status_image_files = [png_file]
