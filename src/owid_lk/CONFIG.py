@@ -5,6 +5,7 @@ from owid_lk.custom._coronavirus_data_explorer import \
     _coronavirus_data_explorer_factory
 from owid_lk.custom.covid_vaccine_booster_doses_per_capita import \
     covid_vaccine_booster_doses_per_capita
+from owid_lk.custom.excess_deaths import excess_deaths
 
 
 def get_time_for_window(dt):
@@ -14,6 +15,7 @@ def get_time_for_window(dt):
 
 WINDOW_26WEEKS = get_time_for_window(timex.SECONDS_IN.WEEK * 26)
 WINDOW_52WEEKS = get_time_for_window(timex.SECONDS_IN.WEEK * 52)
+WINDOW_104WEEKS = get_time_for_window(timex.SECONDS_IN.WEEK * 104)
 TAB_MAP = 'map'
 
 COVID_EXPLORER_DEFAULTS = dict(
@@ -32,6 +34,15 @@ COVID_EXPLORER_DEFAULTS = dict(
 
 CONFIG = [
     dict(
+        name='excess-deaths-cumulative-economist-single-entity',
+        url_base=URL_GRAPHER,
+        url_params=dict(
+            time=WINDOW_104WEEKS,
+            country='LKA',
+        ),
+        func_get_tweet_text=excess_deaths,
+    ),
+    dict(
         name='covid-vaccine-booster-doses-per-capita',
         url_base=URL_GRAPHER,
         url_params=dict(
@@ -42,7 +53,7 @@ CONFIG = [
     ),
     COVID_EXPLORER_DEFAULTS
     | dict(
-        name='covid19-deaths',
+        name='covid19-confirmed-deaths',
         url_params=dict(
             tab=TAB_MAP,
             time=WINDOW_26WEEKS,
@@ -52,7 +63,7 @@ CONFIG = [
         ),
         func_get_tweet_text=_coronavirus_data_explorer_factory(
             'new_deaths_smoothed_per_million',
-            'Daily New #COVID19 Deaths per 1M people - 7day avg.',
+            'Daily New Deaths per 1M people - 7day avg.',
         ),
     ),
     COVID_EXPLORER_DEFAULTS

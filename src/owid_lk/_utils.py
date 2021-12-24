@@ -6,6 +6,8 @@ import urllib
 
 from utils import timex
 
+from owid_lk._constants import URL_GRAPHER
+
 URL_BASE = 'https://ourworldindata.org/grapher'
 
 logging.basicConfig(level=logging.INFO)
@@ -35,9 +37,10 @@ def init():
 def get_url(d):
     url_base = d['url_base']
     url_params = d['url_params']
-    url_data = d.get('url_data')
-    if not url_data:
+    if url_base == URL_GRAPHER:
         url_data = d['name']
+    else:
+        url_data = d.get('url_data')
 
     url = os.path.join(
         url_base, url_data + '?' + urllib.parse.urlencode(url_params)

@@ -41,3 +41,4 @@
   *  [2021-12-23 09:24AM] Shortened tweets
   *  [2021-12-23 09:28AM] Fixed tweet length issues
   *  [2021-12-23 09:39AM] Shifted to prod
+  *  [2021-12-24 08:55AM] Added excess deaths

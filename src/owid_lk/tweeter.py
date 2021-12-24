@@ -11,18 +11,16 @@ def tweet(d):
 
     func_get_tweet_text = d.get('func_get_tweet_text', None)
     inner_tweet_text = ''
-    name_str = ''
+    title = ''
     if func_get_tweet_text:
         data_file = get_data_file(d)
         data_list = tsv.read(data_file, delimiter=DELIMITER)
         inner_tweet_text = func_get_tweet_text(data_list)
     else:
-        name_str = d['name'].replace('-', ' ').title()
-        name_str = name_str.replace('Covid ', '#COVID19 ')
-        name_str = name_str.replace('Covid19 ', '#COVID19 ')
+        title = d.get('title', '')
 
     url = get_url(d)
-    tweet_text = f'''{name_str}
+    tweet_text = f'''{title}
 
 {inner_tweet_text}
 
