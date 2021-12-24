@@ -1,6 +1,6 @@
 # Our World in Data (Sri Lanka)
 
-*Last updated: December 23, 2021 04:14AM UTC*
+*Last updated: December 24, 2021 01:31AM UTC*
 
 * covid-vaccine-booster-doses-per-capita
 
