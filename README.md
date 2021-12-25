@@ -1,10 +1,12 @@
 # Our World in Data (Sri Lanka)
 
-*Last updated: December 24, 2021 01:31AM UTC*
+*Last updated: December 25, 2021 01:32AM UTC*
+
+* excess-deaths-cumulative-economist-single-entity
 
 * covid-vaccine-booster-doses-per-capita
 
-* covid19-deaths
+* covid19-confirmed-deaths
 
 * covid19-reproduction-rate
 
