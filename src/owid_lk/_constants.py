@@ -13,12 +13,13 @@ def join_tilde(*_list):
     return '~'.join(_list)
 
 
+LKA = 'LKA'
 LK_NAME = 'Sri Lanka'
 LK_CONTS_WORLD_URL = join_tilde(
     'Africa',
     'Asia',
     'European Union',
-    'LKA',
+    LKA,
     'North America',
     'Oceania',
     'OWID_WRL',

@@ -1,6 +1,7 @@
 from utils import timex
 
-from owid_lk._constants import LK_CONTS_WORLD_URL, URL_EXPLORERS, URL_GRAPHER
+from owid_lk._constants import (LK_CONTS_WORLD_URL, LKA, URL_EXPLORERS,
+                                URL_GRAPHER)
 from owid_lk.custom._coronavirus_data_explorer import \
     _coronavirus_data_explorer_factory
 from owid_lk.custom.covid_vaccine_booster_doses_per_capita import \
@@ -17,6 +18,9 @@ WINDOW_26WEEKS = get_time_for_window(timex.SECONDS_IN.WEEK * 26)
 WINDOW_52WEEKS = get_time_for_window(timex.SECONDS_IN.WEEK * 52)
 WINDOW_104WEEKS = get_time_for_window(timex.SECONDS_IN.WEEK * 104)
 TAB_MAP = 'map'
+NOT_RELATIVE_TO_POPULATION = {
+    'Relative to Population': 'false',
+}
 
 COVID_EXPLORER_DEFAULTS = dict(
     url_base=URL_EXPLORERS,
@@ -105,5 +109,16 @@ CONFIG = [
             Interval='7-day+rolling+average',
             country=LK_CONTS_WORLD_URL,
         ),
+    ),
+    COVID_EXPLORER_DEFAULTS
+    | dict(
+        name='covid19-confirmed-deaths-lka',
+        url_params=dict(
+            time=WINDOW_26WEEKS,
+            Metric='Confirmed deaths',
+            Interval='7-day+rolling+average',
+            country=LKA,
+        )
+        | NOT_RELATIVE_TO_POPULATION,
     ),
 ]
