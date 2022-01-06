@@ -1,9 +1,11 @@
 import os
+import random
+import time
 
 from utils import filex, timex
 
 from owid_lk import owid_scraper, tweeter
-from owid_lk._utils import get_url, init
+from owid_lk._utils import get_url, init, log
 from owid_lk.CONFIG import CONFIG
 
 
@@ -31,6 +33,9 @@ def run_prod():
     init()
     info_list = []
     for d in CONFIG:
+        time_sleep = 60 * (1 + random.random())
+        log.info(f'Sleeping for {time_sleep}s')
+        time.sleep(time_sleep)
         owid_scraper.scrape(d)
         tweeter.tweet(d)
         info_list.append(dict(name=d['name']))
