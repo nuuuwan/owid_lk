@@ -1,6 +1,6 @@
 # Our World in Data (Sri Lanka)
 
-*Last updated: January 04, 2022 01:33AM UTC*
+*Last updated: January 06, 2022 02:03AM UTC*
 
 * excess-deaths-cumulative-economist-single-entity
 
@@ -15,3 +15,5 @@
 * covid19-omicron-variant
 
 * covid19-tests
+
+* covid19-confirmed-deaths-lka
