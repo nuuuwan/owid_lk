@@ -1,11 +1,10 @@
-import os
 import random
 import time
 
 from utils import filex, timex
 
 from owid_lk import owid_scraper, tweeter
-from owid_lk._utils import get_url, init, log
+from owid_lk._utils import init, log
 from owid_lk.CONFIG import CONFIG
 
 
@@ -29,31 +28,26 @@ def write_readme(info_list):
     filex.write(readme_file, content)
 
 
-def run_prod():
-    init()
-    info_list = []
-    for d in CONFIG:
+def run_single(d):
+    try:
         time_sleep = 60 * (1 + random.random())
         log.info(f'Sleeping for {time_sleep}s')
         time.sleep(time_sleep)
         owid_scraper.scrape(d)
         tweeter.tweet(d)
-        info_list.append(dict(name=d['name']))
+        return dict(name=d['name'])
+    except Exception as e:
+        log.error(str(e))
+
+
+def run():
+    init()
+    info_list = []
+    for d in CONFIG:
+        info = run_single(d)
+        info_list.append(info)
     write_readme(info_list)
 
 
-def run_test_tweet():
-    for d in CONFIG:
-        tweeter.tweet(d)
-
-
-def run_test_open_urls():
-    for d in CONFIG:
-        url = get_url(d)
-        os.system(f'open -a firefox "{url}"')
-
-
 if __name__ == '__main__':
-    # run_test_open_urls()
-    # run_test_tweet()
-    run_prod()
+    run()

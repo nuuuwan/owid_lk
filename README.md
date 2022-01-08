@@ -44,3 +44,4 @@
   *  [2021-12-24 08:55AM] Added excess deaths
   *  [2022-01-04 05:18PM] Added confirmed deaths LKA
   *  [2022-01-06 07:14AM] Added sleep
+  *  [2022-01-08 11:25AM] Added try/catch
