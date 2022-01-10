@@ -12,10 +12,11 @@ def write_readme(info_list):
     readme_file = '/tmp/README.md'
     time_str = timex.format_current_date_with_timezone()
 
+    valid_info_list = list(map(lambda x: x, info_list))
     rendered_info_list = list(
         map(
             lambda info: '* %s' % (info['name']),
-            info_list,
+            valid_info_list,
         )
     )
     content = '\n\n'.join(
@@ -36,8 +37,10 @@ def run_single(d):
         owid_scraper.scrape(d)
         tweeter.tweet(d)
         return dict(name=d['name'])
+
     except Exception as e:
         log.error(str(e))
+        return None
 
 
 def run():
