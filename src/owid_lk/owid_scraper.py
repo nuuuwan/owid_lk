@@ -48,17 +48,17 @@ def scrape(d):
     time.sleep(TIME_LOAD)
     driver.set_window_size(SCREEN_WIDTH, SCREEN_HEIGHT)
 
-    a_cookies = driver.find_element_by_xpath('//button[text()="I agree"]')
+    a_cookies = driver.find_element("xpath", '//button[text()="I agree"]')
     a_cookies.click()
     time.sleep(TIME_WAIT_DEFAULT)
 
-    a_download = driver.find_element_by_xpath('//a[text()=" Download"]')
+    a_download = driver.find_element("xpath", '//a[text()=" Download"]')
     a_download.click()
     time.sleep(TIME_WAIT_DOWNLOAD)
 
     # Downloadin image...
 
-    button_download_png = driver.find_element_by_xpath(
+    button_download_png = driver.find_element("xpath", 
         '//button[@data-track-note="chart-download-png"]'
     )
     button_download_png.click()
@@ -79,7 +79,7 @@ def scrape(d):
         data_file = get_data_file(d)
 
         if not down_data_file or not os.path.exists(data_file):
-            button_download_csv = driver.find_element_by_xpath(
+            button_download_csv = driver.find_element("xpath", 
                 '//button[@data-track-note="chart-download-csv"]'
             )
             button_download_csv.click()
