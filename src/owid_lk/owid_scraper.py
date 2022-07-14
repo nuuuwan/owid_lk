@@ -58,8 +58,8 @@ def scrape(d):
 
     # Downloadin image...
 
-    button_download_png = driver.find_element("xpath", 
-        '//button[@data-track-note="chart-download-png"]'
+    button_download_png = driver.find_element(
+        "xpath", '//button[@data-track-note="chart-download-png"]'
     )
     button_download_png.click()
     log.info('Downloading image...')
@@ -79,8 +79,8 @@ def scrape(d):
         data_file = get_data_file(d)
 
         if not down_data_file or not os.path.exists(data_file):
-            button_download_csv = driver.find_element("xpath", 
-                '//button[@data-track-note="chart-download-csv"]'
+            button_download_csv = driver.find_element(
+                "xpath", '//button[@data-track-note="chart-download-csv"]'
             )
             button_download_csv.click()
             log.info('Downloading data...')
