@@ -1,6 +1,6 @@
 # Our World in Data (Sri Lanka)
 
-*Last updated: September 03, 2022 01:57AM UTC*
+*Last updated: September 04, 2022 01:54AM UTC*
 
 * excess-deaths-cumulative-economist-single-entity
 
