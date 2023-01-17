@@ -1,7 +1,7 @@
 import random
 import time
 
-from utils import filex, timex
+from utils import TIME_FORMAT_TIME, File, Time
 
 from owid_lk import owid_scraper, tweeter
 from owid_lk._utils import init, log
@@ -10,7 +10,7 @@ from owid_lk.CONFIG import CONFIG
 
 def write_readme(info_list):
     readme_file = '/tmp/README.md'
-    time_str = timex.format_current_date_with_timezone()
+    time_str = TIME_FORMAT_TIME.stringify(Time())
 
     valid_info_list = list(map(lambda x: x, info_list))
     rendered_info_list = list(
@@ -26,7 +26,7 @@ def write_readme(info_list):
         ]
         + rendered_info_list
     )
-    filex.write(readme_file, content)
+    File(readme_file).write(content)
 
 
 def run_single(d):

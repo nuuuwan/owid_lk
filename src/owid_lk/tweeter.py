@@ -1,4 +1,4 @@
-from utils import tsv, twitter
+from utils import TSVFile, twitter
 
 from owid_lk._utils import get_data_dir, get_data_file, get_image_file, get_url
 
@@ -14,7 +14,7 @@ def tweet(d):
     title = ''
     if func_get_tweet_text:
         data_file = get_data_file(d)
-        data_list = tsv.read(data_file, delimiter=DELIMITER)
+        data_list = TSVFile(data_file).read()
         inner_tweet_text = func_get_tweet_text(data_list)
     else:
         title = d.get('title', '')

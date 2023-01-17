@@ -1,4 +1,4 @@
-from utils.dt import parse_float
+from utils import String
 
 from owid_lk._constants import LK_CONTS_WORLD_NAMES, LK_NAME
 
@@ -23,7 +23,9 @@ def _coronavirus_data_explorer(data_list, value_key_field, title):
         )
         if entity_data_list:
             entity_data = entity_data_list[0]
-            entity_value = parse_float(entity_data[value_key_field], 0)
+            entity_value = String(entity_data[value_key_field]).float(
+                default=0
+            )
             entity_to_value[entity] = entity_value
 
     sorted_entity_and_value = sorted(

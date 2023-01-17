@@ -4,7 +4,7 @@ import logging
 import os
 import urllib
 
-from utils import timex
+from utils import TIME_FORMAT_DATE_ID, Time
 
 from owid_lk._constants import URL_GRAPHER
 
@@ -15,7 +15,7 @@ log = logging.getLogger('owid_lk')
 
 
 def get_data_dir():
-    date_id = timex.get_date_id()
+    date_id = TIME_FORMAT_DATE_ID.stringify(Time())
     return f'/tmp/owid_lk.{date_id}'
 
 

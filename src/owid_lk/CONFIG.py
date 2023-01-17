@@ -1,4 +1,4 @@
-from utils import timex
+from utils import SECONDS_IN, TIME_FORMAT_DATE, Time, TimeDelta
 
 from owid_lk._constants import (LK_CONTS_WORLD_URL, LKA, URL_EXPLORERS,
                                 URL_GRAPHER)
@@ -10,13 +10,13 @@ from owid_lk.custom.excess_deaths import excess_deaths
 
 
 def get_time_for_window(dt):
-    date_start = timex.get_date(timex.get_unixtime() - dt)
+    date_start = TIME_FORMAT_DATE.stringify(Time() + TimeDelta(-dt))
     return f'{date_start}..latest'
 
 
-WINDOW_26WEEKS = get_time_for_window(timex.SECONDS_IN.WEEK * 26)
-WINDOW_52WEEKS = get_time_for_window(timex.SECONDS_IN.WEEK * 52)
-WINDOW_104WEEKS = get_time_for_window(timex.SECONDS_IN.WEEK * 104)
+WINDOW_26WEEKS = get_time_for_window(SECONDS_IN.WEEK * 26)
+WINDOW_52WEEKS = get_time_for_window(SECONDS_IN.WEEK * 52)
+WINDOW_104WEEKS = get_time_for_window(SECONDS_IN.WEEK * 104)
 TAB_MAP = 'map'
 NOT_RELATIVE_TO_POPULATION = {
     'Relative to Population': 'false',
